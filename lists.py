@@ -1,41 +1,35 @@
+'let\'s list some breakfast drinks'
 'coke,coffee,mimosa,water,bloody mary,ice tea'.split(',')
 #empty
 []
 #different types
-['a',1]
+['coke','coffee','mimosa','water','bloody mary','ice tea',1]
 #indexing
-['a','d',3,'b'][1]
-
-li = ['a','d',3,'b']
+['coke','coffee','mimosa','water','bloody mary','ice tea'][1]
+li = ['coke','coffee','mimosa','water','bloody mary','ice tea']
+li[4]
 #appending
-li.append('6')
+li.append('grapefruit juice')
 li
 #insertion
-li.insert(4,4)
-li
-#remove
-li.remove('d')
-li
-#remove when more than one
-li.append(4)
-li
-li.remove(4)
+li.insert(4,'maple syrup')
 li
 #pop
 li.pop(2)
 li
 #length
 len(li)
-li[4]
+li[len(li)]
 #inclusion
-'6' in li
+'mimosa' in li
+#find index
+li.index('bloody mary')
 #count
-li.append('a')
-li.count('a')
-#combining
-li2 = ['g',7,'3',0]
-li + li2
-li.extend(li2)
+li.append('grapefruit juice')
+li.count('grapefruit juice')
+#index again
 li
-
-
+li.index('grapefruit juice')
+#combining
+li2 = ['pancakes','eggs','potatoes']
+li + li2

@@ -17,6 +17,13 @@ for line in f:
     print line.lower()
 f.close()
 
+raw_input('what if we try to open a file for reading that doesn\'t exist?')
+
+try:
+    f = open('nothere.csv')
+except Exception as error:
+    print error
+
 raw_input('can read arbitrary number of characters from a file')
 
 f = open('input.csv')
@@ -28,7 +35,7 @@ print f.readline()
 print f.readline()
 
 raw_input('write to a file')
-g = open('output.csv','w')
+g = open('output.csv','wb')
 
 g.write(f.read(10))
 g.writelines([f.read(100)])
@@ -44,7 +51,7 @@ f.close()
 raw_input('use string.split()')
 
 f = open('input.csv', 'rU')
-g = open('output.csv','w')
+g = open('output_split.csv','w')
 for line in f:
     split_line = line.split(',')
     g.write(split_line[4]+'\n')
@@ -56,11 +63,12 @@ raw_input('use csv')
 import csv
 
 f = open('input.csv','rU')
-g = open('output.csv','w')
+g = open('output_with_csv.csv','w')
 f_csv = csv.reader(f)
 g_csv = csv.writer(g)
 for row in f_csv:
-    lengths = [len(r) for r in row]
-    g_csv.writerow(lengths)
+    #lengths = [len(r) for r in row]
+    #g_csv.writerow(lengths)
+    g_csv.writerow([row[4], row[6]])
 f.close()
 g.close()

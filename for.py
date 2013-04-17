@@ -1,29 +1,25 @@
 li = 'coke,coffee,mimosa,water,bloody mary,ice tea'.split(',')
 for drink in li:
-    #print "Donny loves to drink {drink}".format(drink=drink)
     print "Donny loves to drink " + drink
 
 raw_input('first for loop done')
 
-for i in range(0,10):
-    print i*3
+age_limits = [['drive',16],['smoke',18],['vote',18],['drink',21],['tell kids they bother you',35]]
 
-raw_input('range for loop done')
+age = 1
+you_can = 'at age {0} you can {1}'
+while age <= max_age:
+    stuff_you_can_do = []
+    for capability_and_age in age_limits:
+        if age >= capability_and_age[1]:
+            stuff_you_can_do.append(capability_and_age[0])
+    if len(stuff_you_can_do) == 0:
+        print you_can.format(age,'do nothing of interest')
+    elif len(stuff_you_can_do) == 1:
+        print you_can.format(age,stuff_you_can_do[0])
+    else:
+        last_one = stuff_you_can_do.pop()
+        print you_can.format(age,', '.join(stuff_you_can_do)) + ', and ' + last_one
+    age+=1
 
-has_e = []
-for drink in li:
-    has_e.append('e' in drink)
-
-print has_e
-
-raw_input('building with a for loop done')
-
-divisible_by_three = [i % 3 == 0 for i in range(0,100)]
-print divisible_by_three
-
-raw_input('first list comprehension done')
-
-divisible_by_three_only = [i for i in range(0,100) if i % 3 == 0]
-print divisible_by_three_only
-
-raw_input('second list comprehension done')
+raw_input('better age test done')
