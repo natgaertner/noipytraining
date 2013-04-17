@@ -40,9 +40,13 @@ g = open('output.csv','wb')
 g.write(f.read(10))
 g.writelines([f.read(100)])
 g.close()
+g = open('output.csv','wab')
+g.write(f.read(50))
+g.close()
+
 f.close()
-f = open('input.csv','rU')
-g = open('output.csv','w')
+f = open('input.csv','rbU')
+g = open('output.csv','wb')
 for line in f:
     g.write(line.lower())
 g.close()
@@ -50,8 +54,8 @@ f.close()
 
 raw_input('use string.split()')
 
-f = open('input.csv', 'rU')
-g = open('output_split.csv','w')
+f = open('input.csv', 'rbU')
+g = open('output_split.csv','wb')
 for line in f:
     split_line = line.split(',')
     g.write(split_line[4]+'\n')
@@ -62,8 +66,8 @@ raw_input('use csv')
 
 import csv
 
-f = open('input.csv','rU')
-g = open('output_with_csv.csv','w')
+f = open('input.csv','rbU')
+g = open('output_with_csv.csv','wb')
 f_csv = csv.reader(f)
 g_csv = csv.writer(g)
 for row in f_csv:
