@@ -34,7 +34,16 @@ raw_input('can read lines from a file')
 print f.readline()
 print f.readline()
 
+#open a file and read through each line with a for loop:
+file_handle = open('/path/to/file/input.csv') #absolute path
+relative_file = open('./another/directory/file.csv') #relative path
+for line in file_handle:
+    print line
+file_handle.close()
+
 raw_input('write to a file')
+
+#open a file for writing:
 g = open('output.csv','wb')
 
 g.write(f.read(10))

@@ -4,10 +4,11 @@ for drink in li:
 
 raw_input('first for loop done')
 
-age_limits = [['drive',16],['smoke',18],['vote',18],['drink',21],['tell kids they bother you',35]]
+age_limits = [['drive',16],['smoke',18],['vote',18],['drink',21],['tell kids they bother you',35], ['collect social security',65]]
 
 age = 1
 you_can = 'at age {0} you can {1}'
+max_age = 100
 while age <= max_age:
     stuff_you_can_do = []
     for capability_and_age in age_limits:

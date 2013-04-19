@@ -5,7 +5,8 @@ smoking_age = 18
 voting_age = 18
 drinking_age = 21
 curmudgeon_age = 35
-max_age = 40
+social_security_age = 65
+max_age = 100
 
 age = 1
 you_can = 'at age {0} you can {1}'
